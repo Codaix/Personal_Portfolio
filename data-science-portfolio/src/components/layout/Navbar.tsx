@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Projects", href: "#projects" },
   { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
+  { name: "Resume", href: "/resume.pdf", external: true },
 ];
 
 export function Navbar() {
@@ -40,12 +41,10 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="text-xl font-heading font-bold text-white tracking-wider flex items-center space-x-2">
-              <span className="text-neon-blue">{"<"}</span>
-              <span>Data</span>
-              <span className="text-neon-teal">{"/"}</span>
-              <span>Scientist</span>
-              <span className="text-neon-blue">{">"}</span>
+            <Link href="/" className="text-2xl font-heading font-bold text-white tracking-widest flex items-center space-x-2">
+              <span className="text-neon-teal">{"<"}</span>
+              <span>P/S</span>
+              <span className="text-neon-teal">{">"}</span>
             </Link>
           </motion.div>
 
@@ -54,16 +53,21 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="hidden md:flex space-x-8"
+            className="hidden md:flex space-x-8 items-center"
           >
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-neon-teal transition-colors text-sm font-mono tracking-wide"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={link.name === "Resume" 
+                  ? "text-black bg-neon-teal hover:bg-white transition-colors text-sm font-mono tracking-wide px-4 py-2 rounded-sm" 
+                  : "text-gray-300 hover:text-neon-teal transition-colors text-sm font-mono tracking-wide"
+                }
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </motion.nav>
 
@@ -88,14 +92,19 @@ export function Navbar() {
         >
           <div className="px-4 pt-2 pb-4 space-y-1 flex flex-col">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 text-base font-mono text-gray-300 hover:text-neon-teal hover:bg-white/5 rounded-md"
+                className={link.name === "Resume"
+                   ? "block px-3 py-2 text-base font-mono bg-neon-teal text-black hover:bg-white rounded-md mt-2 w-max"
+                   : "block px-3 py-2 text-base font-mono text-gray-300 hover:text-neon-teal hover:bg-white/5 rounded-md"
+                }
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
         </motion.div>

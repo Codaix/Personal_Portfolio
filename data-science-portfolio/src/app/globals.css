@@ -5,21 +5,21 @@
   --font-mono: var(--font-jetbrains-mono);
   --font-heading: var(--font-space-grotesk);
 
-  --color-background: #000000;
-  --color-foreground: #e5e7eb;
+  --color-background: #0a0f16;
+  --color-foreground: #cbd5e1;
   
-  --color-neon-blue: #00f0ff;
-  --color-neon-teal: #00ffcc;
-  --color-neon-purple: #b026ff;
+  --color-neon-blue: #3b82f6;      /* Natural slate blue */
+  --color-neon-teal: #10b981;      /* Deep emerald */
+  --color-neon-purple: #8b5cf6;    /* Muted violet */
   
-  --color-dark-gray: #111111;
-  --color-mid-gray: #222222;
+  --color-dark-gray: #0f172a;      /* Slate 900 */
+  --color-mid-gray: #1e293b;       /* Slate 800 */
 }
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #e5e7eb;
+    --background: #0a0f16; /* Dark slate background */
+    --foreground: #f8fafc; /* Very light slate */
   }
 }
 
@@ -35,7 +35,7 @@
 
   /* Custom Selection */
   ::selection {
-    background-color: rgba(0, 240, 255, 0.3);
+    background-color: rgba(59, 130, 246, 0.3); /* Slate blue selection */
     color: #fff;
   }
 }
@@ -45,10 +45,10 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: var(--color-mid-gray);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

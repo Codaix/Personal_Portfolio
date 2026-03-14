@@ -7,28 +7,31 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Predictive Maintenance for Industrial IoT",
-    problem: "Equipment failure in manufacturing leads to costly downtime. The goal was to predict failures before they occur.",
-    techniques: "Random Forest, XGBoost, Time Series Analysis",
+    title: "Epidemic Admission Modeling",
+    problem: "Predicting weekly admissions and detecting surge periods for respiratory diseases using Machine Learning algorithms.",
+    techniques: "Machine Learning, Trend Analysis",
     tools: ["Python", "Scikit-Learn", "Pandas"],
     github: "#",
     demo: "#",
+    bgImage: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    title: "Customer Segmentation & Lifetime Value",
-    problem: "E-commerce store needed to identify high-value customer cohorts to optimize marketing spend.",
-    techniques: "K-Means Clustering, RFM Analysis, PCA",
-    tools: ["Python", "Seaborn", "Tableau"],
+    title: "Air Quality Index Dashboard",
+    problem: "Interactive dashboard for state-wise air quality visualization, dynamic filters, and pollution-surge forecasting.",
+    techniques: "Geospatial Mapping, Data Visualization",
+    tools: ["Power BI", "Data Modeling"],
     github: "#",
     demo: "#",
+    bgImage: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    title: "Real-Time Twitter Sentiment Dashboard",
-    problem: "Tracking public brand perception in real-time during product launches.",
-    techniques: "NLP (VADER), Streaming Data Pipeline",
-    tools: ["Python", "Kafka", "Streamlit", "NLTK"],
+    title: "Event Reminder System",
+    problem: "Robust digital event reminder system built to automate alerts, streamline new event creation, and manage schedules efficiently.",
+    techniques: "GUI Development, Task Scheduling",
+    tools: ["Java", "Swing", "OOP"],
     github: "#",
     demo: "#",
+    bgImage: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Housing Price Image Regression",
@@ -37,6 +40,7 @@ const projects = [
     tools: ["PyTorch", "OpenCV", "NumPy"],
     github: "#",
     demo: "#",
+    bgImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
   }
 ];
 
@@ -68,40 +72,53 @@ export function Projects() {
               <span className="w-8 h-[1px] bg-neon-purple"></span>
               <span>03. SELECTED WORKS</span>
             </div>
-            <H2 className="text-4xl md:text-5xl border-none">Data Science Projects</H2>
+            <H2 className="text-4xl md:text-5xl border-none">Projects</H2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {projects.map((project, index) => (
               <motion.div key={index} variants={itemVariants}>
-                <Card className="h-full flex flex-col p-8 transition-transform hover:-translate-y-2 duration-300 pointer-events-auto">
+                <div className="group relative h-[450px] lg:h-[500px] flex flex-col rounded-2xl overflow-hidden transition-transform hover:-translate-y-2 duration-300 pointer-events-auto border border-gray-800 hover:border-neon-teal/50 shadow-lg">
                   
-                  <div className="flex justify-between items-start mb-6">
-                    <H3 className="text-2xl text-white">{project.title}</H3>
-                    <div className="flex space-x-3 text-gray-400">
-                      <a href={project.github} className="hover:text-neon-blue transition-colors">
-                        <Github className="w-5 h-5" />
-                      </a>
-                      <a href={project.demo} className="hover:text-neon-teal transition-colors">
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
+                  {/* Background Image Setup */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${project.bgImage})` }}
+                  />
+                  
+                  {/* Heavy Gradient Overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/30 z-10" />
+
+                  <div className="relative z-20 flex flex-col h-full p-8">
+                    <div className="flex justify-between items-start mb-6">
+                      <H3 className="text-2xl text-white group-hover:text-neon-teal transition-colors drop-shadow-md">{project.title}</H3>
+                      <div className="flex space-x-4 text-gray-300">
+                        <a href={project.github} className="hover:text-white bg-black/60 p-3 rounded-full backdrop-blur-md transition-all hover:scale-110 border border-gray-600 shadow-xl">
+                          <Github className="w-7 h-7" />
+                        </a>
+                        <a href={project.demo} className="hover:text-white bg-black/60 p-3 rounded-full backdrop-blur-md transition-all hover:scale-110 border border-gray-600 shadow-xl">
+                          <ExternalLink className="w-7 h-7" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="mb-6 flex-grow flex flex-col justify-end">
+                      <P className="text-base text-gray-300 mt-0 mb-4 drop-shadow-sm">{project.problem}</P>
+                      <div className="text-sm font-mono text-gray-400 bg-black/40 p-3 rounded-lg backdrop-blur-md border border-gray-800/50">
+                        <span className="text-neon-blue font-bold">Techniques:</span> {project.techniques}
+                      </div>
+                    </div>
+
+                    <div className="mt-auto flex flex-wrap gap-2 pt-6 border-t border-gray-800/50">
+                      {project.tools.map((tool, tIndex) => (
+                        <span key={tIndex} className="px-3 py-1 text-xs font-mono text-white bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
+                          {tool}
+                        </span>
+                      ))}
                     </div>
                   </div>
-
-                  <div className="mb-6 flex-grow">
-                    <P className="text-sm mt-0 mb-4">{project.problem}</P>
-                    <div className="text-sm font-mono text-gray-400">
-                      <span className="text-neon-teal">Techniques:</span> {project.techniques}
-                    </div>
-                  </div>
-
-                  <div className="mt-auto flex flex-wrap gap-2 pt-6 border-t border-gray-800">
-                    {project.tools.map((tool, tIndex) => (
-                      <Badge key={tIndex} variant="neon">{tool}</Badge>
-                    ))}
-                  </div>
                   
-                </Card>
+                </div>
               </motion.div>
             ))}
           </div>

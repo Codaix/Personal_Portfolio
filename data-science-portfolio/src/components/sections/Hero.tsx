@@ -28,16 +28,22 @@ export function Hero() {
               className="inline-flex items-center space-x-2 bg-gray-900/50 border border-gray-800 rounded-full px-4 py-1.5 w-max"
             >
               <Terminal size={16} className="text-neon-teal" />
-              <span className="text-sm font-mono text-gray-300">import student as DataScientist</span>
+              <span className="text-sm font-mono text-white/80">pipeline.execute()</span>
             </motion.div>
             
-            <H1 className="text-5xl lg:text-7xl">
-              Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-teal to-neon-purple">Pranav</span>
+            <H1 className="text-6xl sm:text-7xl lg:text-[6rem] xl:text-[7rem] leading-none tracking-tight">
+              Hello, I'm <br className="hidden sm:block lg:hidden" />
+              <span className="text-transparent bg-clip-text bg-[length:200%_auto] animate-[gradient_10s_linear_infinite]" style={{ backgroundImage: "linear-gradient(to right, #0ea5e9, #a855f7, #10b981, #f59e0b, #f43f5e, #0ea5e9)" }}>Pranav</span>.
             </H1>
             
-            <P className="text-xl md:text-2xl text-gray-400 font-mono max-w-lg">
-              Data Science Student | Turning Data into Insight
-            </P>
+            <div className="space-y-4 max-w-2xl">
+              <P className="text-2xl md:text-3xl text-gray-300 font-heading font-medium mt-0">
+                Transforming raw data into strategic insight.
+              </P>
+              <P className="text-lg text-gray-500 font-mono">
+                Data Analyst & Predictive Modeler
+              </P>
+            </div>
             
             <motion.div
               initial={{ opacity: 0 }}
@@ -54,25 +60,24 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right side abstract graphic (optional) */}
+          {/* Portrait Placeholder */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.4 }}
             className="hidden lg:flex justify-center items-center"
           >
-             {/* A complementary floating data element or leave empty allowing particles to be prominent */}
-             <div className="relative w-80 h-80 border-2 border-neon-blue/20 rounded-full flex items-center justify-center before:content-[''] before:absolute before:inset-[-20px] before:border before:border-neon-teal/20 before:rounded-full before:animate-[spin_20s_linear_infinite] after:content-[''] after:absolute after:inset-[-40px] after:border-t after:border-neon-purple/30 after:rounded-full after:animate-[spin_15s_linear_infinite_reverse]">
-               <div className="text-center">
-                 <div className="text-6xl font-heading text-white font-bold tracking-tighter">
-                   <span className="text-neon-blue">{"{ "}</span>
-                   Data
-                   <span className="text-neon-blue">{" }"}</span>
-                 </div>
+             <div className="relative w-[350px] h-[350px] xl:w-[450px] xl:h-[450px] rounded-full flex items-center justify-center group">
+               {/* Animated Outline Rings */}
+               <div className="absolute inset-[-20px] rounded-full border border-neon-teal/30 animate-[spin_20s_linear_infinite] group-hover:border-neon-teal transition-colors duration-500"></div>
+               <div className="absolute inset-[-40px] rounded-full border-t border-neon-blue/40 animate-[spin_15s_linear_infinite_reverse] group-hover:border-neon-blue transition-colors duration-500"></div>
+               
+               {/* Core Portrait Container */}
+               <div className="w-full h-full rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 flex items-center justify-center overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_80px_rgba(59,130,246,0.2)] transition-shadow duration-500">
+                  <img src="/profile.png" alt="Pranav" className="w-full h-full object-cover scale-[1.02] opacity-90 hover:opacity-100 transition-opacity" />
                </div>
              </div>
           </motion.div>
-
         </div>
       </div>
 
@@ -88,6 +93,12 @@ export function Hero() {
         <div className="w-[1px] h-8 bg-gradient-to-b from-transparent via-current to-transparent" />
       </motion.div>
       
+      <style jsx global>{`
+        @keyframes gradient {
+          0% { background-position: 0% center; }
+          100% { background-position: 200% center; }
+        }
+      `}</style>
     </section>
   );
 }
