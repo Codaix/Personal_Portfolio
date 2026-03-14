@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { H2, P } from "@/components/ui/Typography";
 
@@ -13,6 +14,9 @@ const topics = [
 ];
 
 export function Exploring() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
     <section id="exploring" className="py-24 border-b border-gray-800 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -47,7 +51,7 @@ export function Exploring() {
 
       {/* Abstract scattered nodes background */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-        {[...Array(5)].map((_, i) => (
+        {mounted && [...Array(5)].map((_, i) => (
           <motion.div
             key={i}
             animate={{
