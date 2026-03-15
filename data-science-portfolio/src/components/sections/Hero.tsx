@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui";
 import { H1, P } from "@/components/ui/Typography";
@@ -7,21 +8,34 @@ import { ParticleNetwork } from "@/components/effects/ParticleNetwork";
 import { ArrowRight, Terminal } from "lucide-react";
 
 export function Hero() {
-  const text = "pipeline.execute()";
-  const letters = Array.from(text);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(150);
+  const fullText = "pipeline.execute()";
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.5 },
-    },
-  };
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      if (!isDeleting) {
+        if (text.length < fullText.length) {
+          setText(fullText.substring(0, text.length + 1));
+          setSpeed(120);
+        } else {
+          setSpeed(1500);
+          setIsDeleting(true);
+        }
+      } else {
+        if (text.length > 0) {
+          setText(fullText.substring(0, text.length - 1));
+          setSpeed(60);
+        } else {
+          setSpeed(500);
+          setIsDeleting(false);
+        }
+      }
+    }, speed);
 
-  const child = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  };
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, speed]);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
@@ -44,23 +58,14 @@ export function Hero() {
               className="inline-flex items-center space-x-2 bg-gray-900/50 border border-gray-800 rounded-full px-4 py-1.5 w-max"
             >
               <Terminal size={16} className="text-neon-teal" />
-              <motion.span
-                variants={container}
-                initial="hidden"
-                animate="visible"
-                className="text-sm font-mono text-white/80 flex items-center"
-              >
-                {letters.map((letter, i) => (
-                  <motion.span variants={child} key={i}>
-                    {letter}
-                  </motion.span>
-                ))}
+              <span className="text-sm font-mono text-white/80 flex items-center">
+                {text}
                 <motion.span
                   animate={{ opacity: [1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8, ease: "easeInOut" }}
                   className="w-[2px] h-4 bg-neon-teal ml-1"
                 />
-              </motion.span>
+              </span>
             </motion.div>
             
             <H1 className="text-6xl sm:text-7xl lg:text-[6rem] xl:text-[7rem] leading-none tracking-tight">

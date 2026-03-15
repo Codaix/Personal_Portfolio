@@ -72,7 +72,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-gray-500 text-sm font-sans">
-              Turning Data into Insight.
+              Coffee. Code. Connect.
             </p>
           </div>
 
