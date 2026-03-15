@@ -7,6 +7,22 @@ import { ParticleNetwork } from "@/components/effects/ParticleNetwork";
 import { ArrowRight, Terminal } from "lucide-react";
 
 export function Hero() {
+  const text = "pipeline.execute()";
+  const letters = Array.from(text);
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.5 },
+    },
+  };
+
+  const child = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Effect */}
@@ -28,7 +44,23 @@ export function Hero() {
               className="inline-flex items-center space-x-2 bg-gray-900/50 border border-gray-800 rounded-full px-4 py-1.5 w-max"
             >
               <Terminal size={16} className="text-neon-teal" />
-              <span className="text-sm font-mono text-white/80">pipeline.execute()</span>
+              <motion.span
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                className="text-sm font-mono text-white/80 flex items-center"
+              >
+                {letters.map((letter, i) => (
+                  <motion.span variants={child} key={i}>
+                    {letter}
+                  </motion.span>
+                ))}
+                <motion.span
+                  animate={{ opacity: [1, 0] }}
+                  transition={{ repeat: Infinity, duration: 0.8, ease: "easeInOut" }}
+                  className="w-[2px] h-4 bg-neon-teal ml-1"
+                />
+              </motion.span>
             </motion.div>
             
             <H1 className="text-6xl sm:text-7xl lg:text-[6rem] xl:text-[7rem] leading-none tracking-tight">
