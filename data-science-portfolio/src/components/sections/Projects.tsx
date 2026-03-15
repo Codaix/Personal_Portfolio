@@ -101,11 +101,9 @@ export function Projects() {
                         <a href={project.github} className="hover:text-white bg-black/60 p-3 rounded-full backdrop-blur-md transition-all hover:scale-110 border border-gray-600 shadow-xl">
                           <Github className="w-7 h-7" />
                         </a>
-                        <a href={project.demo} className="hover:text-white bg-black/60 p-3 rounded-full backdrop-blur-md transition-all hover:scale-110 border border-gray-600 shadow-xl">
-                          <ExternalLink className="w-7 h-7" />
-                        </a>
                       </div>
                     </div>
+
 
                     <div className="mb-6 flex-grow flex flex-col justify-end">
                       <P className="text-base text-gray-300 mt-0 mb-4 drop-shadow-sm">{project.problem}</P>
