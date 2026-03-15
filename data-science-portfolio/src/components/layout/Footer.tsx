@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { personalLinks } from "@/config/personalLinks";
+import { LeetCodeIcon, KaggleIcon } from "@/components/ui/Icons";
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -74,18 +77,27 @@ export function Footer() {
           </div>
 
           <div className="flex space-x-6">
-            <a href="https://github.removenull.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
+            <a href={personalLinks.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
               <span className="sr-only">GitHub</span>
               <Github className="h-6 w-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-teal transition-colors">
+            <a href={personalLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-teal transition-colors">
               <span className="sr-only">LinkedIn</span>
               <Linkedin className="h-6 w-6" />
+            </a>
+            <a href={personalLinks.leetcode} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors">
+              <span className="sr-only">LeetCode</span>
+              <LeetCodeIcon className="h-6 w-6" />
+            </a>
+            <a href={personalLinks.kaggle} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#20beff] transition-colors">
+              <span className="sr-only">Kaggle</span>
+              <KaggleIcon className="h-6 w-6" />
             </a>
             <a href="mailto:contact@example.com" className="text-gray-400 hover:text-neon-purple transition-colors">
               <span className="sr-only">Email</span>
               <Mail className="h-6 w-6" />
             </a>
+
           </div>
           
         </div>

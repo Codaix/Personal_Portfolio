@@ -5,18 +5,9 @@ import { H2, P } from "@/components/ui/Typography";
 import { Button } from "@/components/ui";
 import { Mail, Github, Linkedin, Download } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { personalLinks } from "@/config/personalLinks";
+import { LeetCodeIcon, KaggleIcon } from "@/components/ui/Icons";
 
-const LeetCodeIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.114.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.834-.645s1.367.195 1.834.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.606-2.697C14.075 4.39 12.593 3.8 10.966 3.8c-1.626 0-3.136.61-4.28 1.764L2.348 9.944C1.194 11.088.584 12.598.584 14.225s.611 3.136 1.764 4.28l4.34 4.37c1.144 1.155 2.654 1.765 4.28 1.765s3.137-.61 4.281-1.765l2.697-2.607c.535-.515.517-1.366-.018-1.901-.535-.536-1.366-.554-1.826-.038z"/>
-  </svg>
-);
-
-const KaggleIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.141c0-.233.118-.351.354-.351h2.431c.234 0 .351.118.351.351v15.353l6.53-6.191c.142-.14.305-.21.492-.21h3.337c.189 0 .282.047.282.14 0 .045-.024.093-.071.141l-5.271 4.981 5.926 8.761c.023.047.035.094.035.141z"/>
-  </svg>
-);
 
 // Friendly Interactive Owl Companion
 function InteractiveCompanion() {
@@ -184,7 +175,7 @@ export function Contact() {
               <Mail className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" /> Say Hello
             </Button>
             
-            <Button variant="outline" size="lg" className="w-full sm:w-auto text-base group hover:text-white" onClick={() => window.open('/resume.pdf', '_blank')}>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto text-base group hover:text-white" onClick={() => window.open(personalLinks.resume, '_blank')}>
               <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" /> Resume
             </Button>
           </div>
@@ -192,7 +183,7 @@ export function Contact() {
           <div className="mt-16 pt-8 border-t border-gray-800 flex justify-center space-x-6 md:space-x-12">
             <motion.a 
               whileHover={{ y: -5, color: "var(--color-neon-blue)" }}
-              href="https://github.com" 
+              href={personalLinks.github} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 flex flex-col items-center space-y-2 transition-colors interactive"
@@ -202,7 +193,7 @@ export function Contact() {
             </motion.a>
             <motion.a 
               whileHover={{ y: -5, color: "var(--color-neon-teal)" }}
-              href="https://linkedin.com" 
+              href={personalLinks.linkedin} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 flex flex-col items-center space-y-2 transition-colors interactive"
@@ -212,7 +203,7 @@ export function Contact() {
             </motion.a>
             <motion.a 
               whileHover={{ y: -5, color: "var(--color-neon-purple)" }}
-              href="https://leetcode.com" 
+              href={personalLinks.leetcode} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 flex flex-col items-center space-y-2 transition-colors interactive"
@@ -222,7 +213,7 @@ export function Contact() {
             </motion.a>
             <motion.a 
               whileHover={{ y: -5, color: "#20beff" }}
-              href="https://kaggle.com" 
+              href={personalLinks.kaggle} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 flex flex-col items-center space-y-2 transition-colors interactive"
@@ -230,6 +221,7 @@ export function Contact() {
               <KaggleIcon className="w-7 h-7 md:w-8 md:h-8" />
               <span className="text-xs font-mono">Kaggle</span>
             </motion.a>
+
           </div>
 
         </motion.div>

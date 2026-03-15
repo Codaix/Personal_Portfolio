@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { H2, H3, P } from "@/components/ui/Typography";
 import { Card, Badge, Button } from "@/components/ui";
 import { Github, ExternalLink } from "lucide-react";
+import { personalLinks } from "@/config/personalLinks";
+
 
 const projects = [
   {
@@ -11,37 +13,40 @@ const projects = [
     problem: "Predicting weekly admissions and detecting surge periods for respiratory diseases using Machine Learning algorithms.",
     techniques: "Machine Learning, Trend Analysis",
     tools: ["Python", "Scikit-Learn", "Pandas"],
-    github: "#",
+    github: "https://github.com/Codaix/Data_Science_Projects/blob/main/ML_Respiratory_Analysis%20(2).py",
     demo: "#",
     bgImage: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2070&auto=format&fit=crop",
   },
+
   {
     title: "Air Quality Index Dashboard",
     problem: "Interactive dashboard for state-wise air quality visualization, dynamic filters, and pollution-surge forecasting.",
     techniques: "Geospatial Mapping, Data Visualization",
     tools: ["Power BI", "Data Modeling"],
-    github: "#",
+    github: "https://github.com/Codaix/Power_BI/blob/main/Power_BI_project.pbix",
     demo: "#",
     bgImage: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=2070&auto=format&fit=crop",
   },
+
   {
     title: "Event Reminder System",
     problem: "Robust digital event reminder system built to automate alerts, streamline new event creation, and manage schedules efficiently.",
     techniques: "GUI Development, Task Scheduling",
     tools: ["Java", "Swing", "OOP"],
-    github: "#",
+    github: "https://github.com/Codaix/Event_Reminder",
     demo: "#",
     bgImage: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?q=80&w=2070&auto=format&fit=crop",
   },
+
   {
-    title: "Housing Price Image Regression",
-    problem: "Estimating property values using both tabular data and satellite imagery.",
-    techniques: "Convolutional Neural Networks (CNN), Multimodal Learning",
-    tools: ["PyTorch", "OpenCV", "NumPy"],
-    github: "#",
+    title: "House Price Regression Prediction",
+    problem: "Estimating property values using historical tabular housing data.",
+    techniques: "Machine Learning, Regression Analysis",
+    tools: ["Python", "Pandas", "Scikit-Learn"],
+    github: "https://github.com/Codaix/Data_Science_Projects/blob/main/House%20price%20prediction%20model.py",
     demo: "#",
     bgImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-  }
+  },
 ];
 
 export function Projects() {
@@ -124,7 +129,8 @@ export function Projects() {
           </div>
           
           <motion.div variants={itemVariants} className="mt-16 text-center">
-            <Button variant="outline" size="lg" className="font-mono">
+            <Button variant="outline" size="lg" className="font-mono" onClick={() => window.open(personalLinks.github, '_blank')}>
+
               View All on GitHub <Github className="ml-2 w-4 h-4" />
             </Button>
           </motion.div>

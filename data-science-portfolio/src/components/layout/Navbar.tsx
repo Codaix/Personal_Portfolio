@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { personalLinks } from "@/config/personalLinks";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -11,7 +12,7 @@ const navLinks = [
   { name: "Projects", href: "#projects" },
   { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
-  { name: "Resume", href: "/resume.pdf", external: true },
+  { name: "Resume", href: personalLinks.resume, external: true },
 ];
 
 export function Navbar() {
