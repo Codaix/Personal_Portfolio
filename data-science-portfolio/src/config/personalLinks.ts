@@ -4,6 +4,8 @@ export const personalLinks = {
   leetcode: "https://leetcode.com/u/SharmaPranav/",
   kaggle: "https://www.kaggle.com/pranavsharma69",
   linkedin: "https://www.linkedin.com/in/pranav54/",
+  email: "pranav4330@gmail.com",
 } as const;
+
 
 

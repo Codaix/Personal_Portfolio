@@ -171,7 +171,7 @@ export function Contact() {
           </P>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button size="lg" className="w-full sm:w-auto text-base group" onClick={() => window.location.href = 'mailto:hello@example.com'}>
+            <Button size="lg" className="w-full sm:w-auto text-base group" onClick={() => window.location.href = `mailto:${personalLinks.email}`}>
               <Mail className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" /> Say Hello
             </Button>
             

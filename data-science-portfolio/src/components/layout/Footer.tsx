@@ -93,7 +93,7 @@ export function Footer() {
               <span className="sr-only">Kaggle</span>
               <KaggleIcon className="h-6 w-6" />
             </a>
-            <a href="mailto:contact@example.com" className="text-gray-400 hover:text-neon-purple transition-colors">
+            <a href={`mailto:${personalLinks.email}`} className="text-gray-400 hover:text-neon-purple transition-colors">
               <span className="sr-only">Email</span>
               <Mail className="h-6 w-6" />
             </a>
