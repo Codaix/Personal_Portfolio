@@ -55,13 +55,16 @@ export default function CertificatesPage() {
           {allCertificates.map((cert: Certificate, index: number) => {
             const Icon = iconMap[cert.iconType] || Award;
             return (
-              <motion.div
+              <motion.a
                 key={index}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 whileHover={{ scale: 1.25, zIndex: 50 }}
-                className="relative group h-full flex flex-col bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.5)] overflow-hidden"
+                className="relative group h-full flex flex-col bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.5)] overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 
@@ -95,19 +98,8 @@ export default function CertificatesPage() {
                    <span className="text-xs font-mono text-neon-teal mt-3 block">{cert.issuer}</span>
                 </div>
 
-                  <div className="mt-8 pt-4 border-t border-white/5 flex justify-end">
-                    <motion.a 
-                      href={cert.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-gray-400 hover:text-white flex items-center gap-2 text-sm transition-colors text-right"
-                      whileHover={{ scale: 1.15, zIndex: 50 }}
-                    >
-                      {cert.buttonText || "Verify"} <ExternalLink className="w-3.5 h-3.5" />
-                    </motion.a>
-                  </div>
                 </div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </div>

@@ -43,29 +43,5 @@ export const topCertificates: Certificate[] = [
 ];
 
 export const allCertificates: Certificate[] = [
-  ...topCertificates,
-  {
-    title: "Privacy & Security in Online Social Media",
-    issuer: "IIT Kharagpur",
-    date: "2025",
-    description: "Intensive training on securing digital identities and online safety.",
-    link: "#",
-    iconType: "shield"
-  },
-  {
-    title: "Training in DSA with CipherSchool",
-    issuer: "CipherSchool",
-    date: "2025",
-    description: "Completed 2-month course on Data Structures and Algorithms in Java.",
-    link: "#",
-    iconType: "award"
-  },
-  {
-    title: "SQL for Data Science",
-    issuer: "University of California, Davis",
-    date: "2024",
-    description: "Querying and managing data in relational database management systems.",
-    link: "#",
-    iconType: "database"
-  }
+  ...topCertificates
 ];
