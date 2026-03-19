@@ -31,12 +31,14 @@ export const topCertificates: Certificate[] = [
     buttonText: "Visit Site"
   },
   {
-    title: "Machine Learning Specialization",
-    issuer: "DeepLearning.AI",
-    date: "2023",
-    description: "Applied supervised & unsupervised learning algorithms to solve real-world problems.",
-    link: "#",
-    iconType: "brain"
+    title: "Master Generative AI & Generative AI tools (ChatGPT & more)",
+    issuer: "Udemy",
+    date: "Aug. 27, 2025",
+    description: "Comprehensive mastery of Generative AI models, prompt engineering, and ChatGPT integration.",
+    link: "https://springboard.udemy.com/certificate/UC-406c310e-586e-486a-9978-40734a827d0f/",
+    iconType: "brain",
+    bgImage: "/udemy_generative_ai.png",
+    buttonText: "Visit Site"
   }
 ];
 
