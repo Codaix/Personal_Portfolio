@@ -1,0 +1,63 @@
+export interface Certificate {
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  link: string;
+  iconType: 'database' | 'cloud' | 'brain' | 'award' | 'shield';
+}
+
+export const topCertificates: Certificate[] = [
+  {
+    title: "Google Data Analytics Professional Certificate",
+    issuer: "Google / Coursera",
+    date: "2024",
+    description: "Mastered data cleaning, analysis, and visualization using SQL, R, and Tableau.",
+    link: "#",
+    iconType: "database"
+  },
+  {
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2024",
+    description: "Validated overall understanding of the AWS Cloud platform, services, and security.",
+    link: "#",
+    iconType: "cloud"
+  },
+  {
+    title: "Machine Learning Specialization",
+    issuer: "DeepLearning.AI",
+    date: "2023",
+    description: "Applied supervised & unsupervised learning algorithms to solve real-world problems.",
+    link: "#",
+    iconType: "brain"
+  }
+];
+
+export const allCertificates: Certificate[] = [
+  ...topCertificates,
+  {
+    title: "Privacy & Security in Online Social Media",
+    issuer: "IIT Kharagpur",
+    date: "2025",
+    description: "Intensive training on securing digital identities and online safety.",
+    link: "#",
+    iconType: "shield"
+  },
+  {
+    title: "Training in DSA with CipherSchool",
+    issuer: "CipherSchool",
+    date: "2025",
+    description: "Completed 2-month course on Data Structures and Algorithms in Java.",
+    link: "#",
+    iconType: "award"
+  },
+  {
+    title: "SQL for Data Science",
+    issuer: "University of California, Davis",
+    date: "2024",
+    description: "Querying and managing data in relational database management systems.",
+    link: "#",
+    iconType: "database"
+  }
+];
