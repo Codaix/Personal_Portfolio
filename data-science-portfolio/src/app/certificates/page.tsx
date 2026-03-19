@@ -5,7 +5,7 @@ import { H1, H2, H3, P } from "@/components/ui/Typography";
 import { Button } from "@/components/ui";
 import { Database, Cloud, Brain, Award, Shield, ArrowLeft, ExternalLink } from "lucide-react";
 import { allCertificates, Certificate } from "@/config/certificates";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
@@ -18,6 +18,7 @@ const iconMap = {
 };
 
 export default function CertificatesPage() {
+  const router = useRouter();
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-neon-blue/30">
       <Navbar />
@@ -31,11 +32,13 @@ export default function CertificatesPage() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <Link href="/#certificates" passHref legacyBehavior>
-            <Button variant="ghost" className="hover:bg-white/5 text-gray-400 hover:text-white flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" /> Back to Portfolio
-            </Button>
-          </Link>
+          <Button 
+            variant="ghost" 
+            onClick={() => router.push('/#certificates')}
+            className="hover:bg-white/5 text-gray-400 hover:text-white flex items-center gap-2"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to Portfolio
+          </Button>
         </motion.div>
 
         <motion.div

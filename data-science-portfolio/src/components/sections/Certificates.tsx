@@ -5,7 +5,7 @@ import { H2, H3, P } from "@/components/ui/Typography";
 import { Button } from "@/components/ui";
 import { Database, Cloud, Brain, Award, Shield, ArrowRight, ExternalLink } from "lucide-react";
 import { topCertificates, Certificate } from "@/config/certificates";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const iconMap = {
   database: Database,
@@ -16,6 +16,7 @@ const iconMap = {
 };
 
 export function Certificates() {
+  const router = useRouter();
   return (
     <section id="certificates" className="py-24 border-b border-gray-800 relative bg-black overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -90,15 +91,14 @@ export function Certificates() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <Link href="/certificates" passHref legacyBehavior>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="group hover:text-white border-white/20 hover:border-white/40 transition-all duration-300"
-            >
-               View All Certificates <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            onClick={() => router.push('/certificates')}
+            className="group hover:text-white border-white/20 hover:border-white/40 transition-all duration-300"
+          >
+             View All Certificates <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </motion.div>
         
       </div>
