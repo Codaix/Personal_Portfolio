@@ -47,7 +47,7 @@ export function Certificates() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
+                whileHover={{ scale: 1.25, zIndex: 50 }}
                 className="relative group h-full flex flex-col bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.5)] overflow-hidden"
               >
                 {/* Backlight effect */}
@@ -55,15 +55,18 @@ export function Certificates() {
                 
                 {/* Background Certificate Image */}
                 {cert.bgImage && (
-                  <div className="absolute inset-0 -z-20 overflow-hidden">
+                  <div className="absolute inset-0 z-0 overflow-hidden bg-black/0 group-hover:bg-black transition-colors duration-300">
                     <img 
                       src={cert.bgImage} 
                       alt={cert.title}
-                      className="object-cover w-full h-full opacity-30 group-hover:opacity-40 transition-opacity duration-400 group-hover:scale-105" 
+                      className="object-cover group-hover:object-contain w-full h-full opacity-30 group-hover:opacity-100 transition-all duration-500" 
                     />
-                    <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-black/80 group-hover:bg-black/0 transition-colors duration-500" />
                   </div>
                 )}
+                
+                {/* Wrap all content in a fading container on hover */}
+                <div className="relative z-10 h-full flex flex-col group-hover:opacity-0 transition-opacity duration-500">
                 
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-neon-purple group-hover:scale-110 group-hover:text-white transition-all duration-300">
@@ -80,16 +83,17 @@ export function Certificates() {
                    <span className="text-xs font-mono text-neon-teal mt-3 block">{cert.issuer}</span>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/5 flex justify-end">
-                  <motion.a 
-                    href={cert.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-gray-400 hover:text-white flex items-center gap-2 text-sm transition-colors text-right"
-                    whileHover={{ x: 3 }}
-                  >
-                    {cert.buttonText || "Verify"} <ExternalLink className="w-3.5 h-3.5" />
-                  </motion.a>
+                  <div className="mt-8 pt-4 border-t border-white/5 flex justify-end">
+                    <motion.a 
+                      href={cert.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-gray-400 hover:text-white flex items-center gap-2 text-sm transition-colors text-right"
+                      whileHover={{ x: 3 }}
+                    >
+                      {cert.buttonText || "Verify"} <ExternalLink className="w-3.5 h-3.5" />
+                    </motion.a>
+                  </div>
                 </div>
               </motion.div>
             );

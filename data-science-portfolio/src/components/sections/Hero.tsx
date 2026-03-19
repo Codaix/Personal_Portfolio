@@ -111,7 +111,7 @@ export function Hero() {
                
                {/* Core Portrait Container */}
                <div className="w-full h-full rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 flex items-center justify-center overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_80px_rgba(59,130,246,0.2)] transition-shadow duration-500">
-                  <img src="/SharmaPranav/profile.png" alt="Pranav" className="w-full h-full object-cover scale-[1.02] opacity-90 hover:opacity-100 transition-opacity" />
+                  <img src="/SharmaPranav/profile.jpg" alt="Pranav" className="w-full h-full object-cover scale-[1.02] opacity-90 hover:opacity-100 transition-opacity" />
                </div>
 
 

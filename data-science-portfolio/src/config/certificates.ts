@@ -17,7 +17,7 @@ export const topCertificates: Certificate[] = [
     description: "Elite certification funded by MoE, Govt. of India covering online safety and privacy.",
     link: "https://onlinecourses.nptel.ac.in/noc25_cs79/preview",
     iconType: "shield",
-    bgImage: "/nptel_privacy.png",
+    bgImage: "/SharmaPranav/nptel_privacy.png",
     buttonText: "Visit Site"
   },
   {
@@ -27,7 +27,7 @@ export const topCertificates: Certificate[] = [
     description: "Completed training in Data Structures and Algorithms with Cipherschools.",
     link: "https://www.cipherschools.com/",
     iconType: "award",
-    bgImage: "/cipherschool_dsa.png",
+    bgImage: "/SharmaPranav/cipherschool_dsa.png",
     buttonText: "Visit Site"
   },
   {
@@ -37,7 +37,7 @@ export const topCertificates: Certificate[] = [
     description: "Comprehensive mastery of Generative AI models, prompt engineering, and ChatGPT integration.",
     link: "https://springboard.udemy.com/certificate/UC-406c310e-586e-486a-9978-40734a827d0f/",
     iconType: "brain",
-    bgImage: "/udemy_generative_ai.png",
+    bgImage: "/SharmaPranav/udemy_generative_ai.png",
     buttonText: "Visit Site"
   }
 ];
