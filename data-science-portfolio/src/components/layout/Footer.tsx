@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { personalLinks } from "@/config/personalLinks";
 import { LeetCodeIcon, KaggleIcon } from "@/components/ui/Icons";
 
@@ -96,6 +96,10 @@ export function Footer() {
             <a href={`mailto:${personalLinks.email}`} className="text-gray-400 hover:text-neon-purple transition-colors">
               <span className="sr-only">Email</span>
               <Mail className="h-6 w-6" />
+            </a>
+            <a href={`tel:${personalLinks.phone}`} className="text-gray-400 hover:text-neon-teal transition-colors">
+              <span className="sr-only">Phone</span>
+              <Phone className="h-6 w-6" />
             </a>
 
           </div>

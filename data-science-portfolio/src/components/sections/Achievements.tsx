@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { H2, H3, P } from "@/components/ui/Typography";
-import { Trophy, Award, BookOpen, Star, Calendar as CalendarIcon } from "lucide-react";
+import { Trophy, Award, BookOpen, Star, Calendar as CalendarIcon, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui";
+import { personalLinks } from "@/config/personalLinks";
 import { useMemo } from "react";
 
 const achievements = [
@@ -110,6 +112,24 @@ export function Achievements() {
           ))}
         </div>
         
+        {/* View Certificates Button */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <Button 
+            variant="outline" 
+            size="lg" 
+            onClick={() => window.open(personalLinks.certificates, '_blank')}
+            className="group hover:text-white border-white/20 hover:border-white/40 transition-all duration-300"
+          >
+             View All Certificates <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+
       </div>
     </section>
   );

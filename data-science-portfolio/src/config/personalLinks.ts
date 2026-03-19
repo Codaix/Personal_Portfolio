@@ -5,6 +5,8 @@ export const personalLinks = {
   kaggle: "https://www.kaggle.com/pranavsharma69",
   linkedin: "https://www.linkedin.com/in/pranav54/",
   email: "pranav4330@gmail.com",
+  phone: "7876703046",
+  certificates: "https://drive.google.com/drive/folders/YOUR_CERTIFICATES",
 } as const;
 
 
