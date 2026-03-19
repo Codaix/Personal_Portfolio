@@ -53,6 +53,18 @@ export function Certificates() {
                 {/* Backlight effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 
+                {/* Background Certificate Image */}
+                {cert.bgImage && (
+                  <div className="absolute inset-0 -z-20 overflow-hidden">
+                    <img 
+                      src={cert.bgImage} 
+                      alt={cert.title}
+                      className="object-cover w-full h-full opacity-30 group-hover:opacity-40 transition-opacity duration-400 group-hover:scale-105" 
+                    />
+                    <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-300" />
+                  </div>
+                )}
+                
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-neon-purple group-hover:scale-110 group-hover:text-white transition-all duration-300">
                     <Icon className="w-7 h-7" />
@@ -76,7 +88,7 @@ export function Certificates() {
                     className="text-gray-400 hover:text-white flex items-center gap-2 text-sm transition-colors text-right"
                     whileHover={{ x: 3 }}
                   >
-                    Verify <ExternalLink className="w-3.5 h-3.5" />
+                    {cert.buttonText || "Verify"} <ExternalLink className="w-3.5 h-3.5" />
                   </motion.a>
                 </div>
               </motion.div>

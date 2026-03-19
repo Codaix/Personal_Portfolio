@@ -5,6 +5,8 @@ export interface Certificate {
   description: string;
   link: string;
   iconType: 'database' | 'cloud' | 'brain' | 'award' | 'shield';
+  bgImage?: string;
+  buttonText?: string;
 }
 
 export const topCertificates: Certificate[] = [
@@ -17,12 +19,14 @@ export const topCertificates: Certificate[] = [
     iconType: "database"
   },
   {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2024",
-    description: "Validated overall understanding of the AWS Cloud platform, services, and security.",
-    link: "#",
-    iconType: "cloud"
+    title: "Training in DSA with CipherSchool",
+    issuer: "CipherSchool",
+    date: "Jul 2025",
+    description: "Completed training in Data Structures and Algorithms with Cipherschools.",
+    link: "https://www.cipherschools.com/",
+    iconType: "award",
+    bgImage: "/cipherschool_dsa.png",
+    buttonText: "Visit Site"
   },
   {
     title: "Machine Learning Specialization",
