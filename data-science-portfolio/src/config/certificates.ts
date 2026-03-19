@@ -11,12 +11,14 @@ export interface Certificate {
 
 export const topCertificates: Certificate[] = [
   {
-    title: "Google Data Analytics Professional Certificate",
-    issuer: "Google / Coursera",
-    date: "2024",
-    description: "Mastered data cleaning, analysis, and visualization using SQL, R, and Tableau.",
-    link: "#",
-    iconType: "database"
+    title: "Privacy and Security in Online Social Media",
+    issuer: "NPTEL / IIIT Hyderabad",
+    date: "Jan-Apr 2025",
+    description: "Elite certification funded by MoE, Govt. of India covering online safety and privacy.",
+    link: "https://onlinecourses.nptel.ac.in/noc25_cs79/preview",
+    iconType: "shield",
+    bgImage: "/nptel_privacy.png",
+    buttonText: "Visit Site"
   },
   {
     title: "Training in DSA with CipherSchool",
